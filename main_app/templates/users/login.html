@@ -1,6 +1,22 @@
 {%block title %}{{title}}{% endblock %}
-<form action="" method="post">
+{% block content %}
+    <h1>{{title}}</h1>
 
-    {% csrf_token %}
-    {{}}
-</form>
+    {% if messages %}
+        {% for message in messages %}
+            <div>
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <form action="" method="post">
+
+        {% csrf_token %}
+        <label for="username">Nombre de usuario:</label>
+        <input type="text" name="username" value="">
+        <label for="password">Contraseña: </label>
+        <input type="password" name="password" id=""/>
+        <input type="submit" value="Login"/>
+    </form>
+{% endblock %} 
+
