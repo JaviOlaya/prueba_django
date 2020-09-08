@@ -1,0 +1,24 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+header{
+    width: 100vw;
+    height: 20vh;
+
+}
+#content{
+    width: 100vw;
+    height: 68vh;
+}
+
+footer{
+    width: 100vw;
+    height: 12vh;
+}

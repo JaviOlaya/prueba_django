@@ -24,18 +24,18 @@ def register_page(request):
                 register_form.save()
                 messages.success(request, 'Te has registrado correctamente')
 
-                return redirect('index')
+                return redirect('register')
             else:
                 messages.warning(request,"Datos usuario incorrectos")
-    return render(request, 'users/register.html',{
-        'title': 'registro',
-        'register_form': register_form
-    })
+        return render(request, 'users/register.html',{
+            'title': 'registro',
+            'register_form': register_form
+        })
     
     
 def login_page(request):
     if request.user.is_authenticated:
-        return redirect('index')
+        return redirect('login')
     else:
         #verificación:
         if request.method == 'POST':
@@ -50,9 +50,9 @@ def login_page(request):
             else:
                 messages.warning(request,"Datos usuario incorrectos")
                 
-    return render(request, 'users/login.html',{
-        'title': 'Login'
-    })
+        return render(request, 'users/login.html',{
+            'title': 'Login',
+        })
 def logout_page(request):
     logout(request)
     return redirect('login')

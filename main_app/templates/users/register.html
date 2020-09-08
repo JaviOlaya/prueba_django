@@ -1,10 +1,18 @@
+{% extends 'layouts/layout.html' %}
 {%load static %}
 {% block title %}{{title}}{% endblock %}
 
 {% block content %}
     <h1>{{title}}</h1>
-
-    {{register_form.errors}}
+    
+    {% if messages %}
+        {% for message in messages %}
+            <div>
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+    
 
     <form action="" method="post">
         {% csrf_token %}

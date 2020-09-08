@@ -11,18 +11,30 @@
 </head>
 <body>
     <header>
-
+        <nav>
+            <ul>
+                {%if user.email %}
+                    <li><a href="{% url 'index' %}">Inicio</a></li>
+                    <li><a href="{% url 'logout' %}">Salir</a></li>
+                {% else %}
+                    <li><a href="{% url 'register' %}">Registro</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
     </header>
-    <nav>
-        
-    </nav>
+    <hr>
     <div id="content">
         <div class="box">
             {% block content %}
+
+
             {% endblock %}
         </div>
     </div>
-    
+    <hr>
+    <footer>
 
+    </footer>
 </body>
 </html>
